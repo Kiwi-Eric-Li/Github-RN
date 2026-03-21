@@ -3,6 +3,7 @@ import {View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
 
 const Input = (props) => {
     const {label, placeholder, shortLine, secure, onChangeText} = props;
+    
     return (
         <View style={{'backgroundColor': 'white'}}>
             <View style={styles.row}>
@@ -54,7 +55,7 @@ export const NavBar = (props) => {
             <View style={styles.titleLayout}>
                 <Text style={styles.title}>{title}</Text>
             </View>
-            <Text style={styles.rightTitle}>{rightTitle}</Text>
+            <Text style={styles.rightTitle} onPress={onRightClick}>{rightTitle}</Text>
         </View>
     )
 

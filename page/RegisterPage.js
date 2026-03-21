@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import {View, StyleSheet} from 'react-native'
-//import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 
 import Input, { ConfirmButton, Tips, NavBar } from '../components/Login'
 
-export default function LoginPage({ navigation }) {
-    
+export default function RegisterPage({ navigation }) {
+
     // const navigation = useNavigation();
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -19,21 +19,19 @@ export default function LoginPage({ navigation }) {
         setMsg('');
     }
 
-    const NavigateRegister = () => {
-        console.log("NavigateRegister");
-        navigation.navigate("RegisterPage");
+    const NavigateLogin = () => {
+        navigation.navigate("LoginPage");
     }
-
 
     return (
         <View style={styles.root}>
-            <NavBar title="Login" rightTitle="Register" onRightClick={NavigateRegister}/>
+            <NavBar title="Register" rightTitle="Register" onRightClick={NavigateLogin}/>
             <View style={styles.line}/>
             <View style={styles.content}>
                 <Input 
                     label="Username" 
                     placeholder="please input username" 
-                    secure={false} 
+                    secure={false}
                     shortLine={true} 
                     onChangeText={(txt) => setUserName(txt)} 
                 />
@@ -44,7 +42,7 @@ export default function LoginPage({ navigation }) {
                     shortLine={false} 
                     onChangeText={(txt) => setPassword(txt)} 
                 />
-                <ConfirmButton title="Login" onClick={onLogin}/>
+                <ConfirmButton title="Register" onClick={onLogin}/>
                 <Tips msg={msg}/>
             </View>
         </View>
